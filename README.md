@@ -3,9 +3,11 @@ Shortcuts for Avian Influenza Genomics using Unix.
 
 1. Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools.
 2. Quickly analyze multiple genomes using Genoflu
+   
 
 
-1. Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools.
+1.
+Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools.
 As GISAID Influenza sequences are downloaded per segment in one file,
 the below code can parse out the different sequences into their individual file.
 When downloading the sequences, ensure that the unique GISAID ID and the Segment are in the fasta header.
