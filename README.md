@@ -1,9 +1,11 @@
 # Avian Influenza
-Shortcuts for Avian Influenza Genomics using Unix
-Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools
+Shortcuts for Avian Influenza Genomics using Unix.
+
+1. Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools.
+2. Quickly analyze multiple genomes using Genoflu
 
 
-
+1. Easily manipulate GISAID downloaded fasta sequences to use in UShER or Nextclade tools.
 As GISAID Influenza sequences are downloaded per segment in one file,
 the below code can parse out the different sequences into their individual file.
 When downloading the sequences, ensure that the unique GISAID ID and the Segment are in the fasta header.
@@ -41,3 +43,16 @@ done
 #Concat all files with line inbetween
 awk 'FNR==1{print ""}1' final_concat_EPI_ISL_19* > finalfile.fasta
 ```
+2. Quickly analyze multiple genomes using Genoflu
+```
+#Activate genoflu
+conda activate genoflu
+#The code from section one creates individualized fasta file per GISAID ID and labels them EPI_ISL_unique#.fasta
+#These files can be looped through genoflu
+for i in EPI_ISL_xx.fasta EPI_ISL_xx.fasta;
+do
+genoflu.py -f $i>> test.txt;
+done
+
+#see all genoflu results in one file
+cat *.tsv >> all_genoflu_Results.tsv
